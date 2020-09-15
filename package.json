@@ -8,7 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "serverless": ">=1.34.0"
+    "serverless": "^2.0.0"
   },
   "scripts": {
     "deploy": "./node_modules/serverless/bin/serverless deploy",

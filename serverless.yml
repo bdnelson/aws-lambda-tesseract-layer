@@ -1,14 +1,22 @@
 service: tesseract-ocr-layer
-frameworkVersion: ">=1.34.0 <2.0.0"
 
 provider:
   name: aws
-  region: eu-central-1
-  deploymentBucket: europace.projects
 
 layers:
   tesseract:
     path: layer
     compatibleRuntimes:
-      - python3.6
-      - python3.7
+      - python3.8
+      - nodejs12.x
+      - ruby2.7
+      - provided
+
+resources:
+  Outputs:
+    TesseractOcrLayerArn:
+      Description: The ARN for the Tesseract OCR lambda layer.
+      Value:
+        Ref: TesseractLambdaLayer
+      Export:
+        Name: TesseractOcrLayerArn
